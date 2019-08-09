@@ -15,7 +15,7 @@ public class Carro extends Veiculos implements Acoes{
     
     public Carro(){
         this.marca = "Ford";
-        this.modelo = "Eco-Sport";
+        this.modelo = "Ecosport";
         this.cor = "Branca";
         this.placa = "ABC-1234";
         this.eixos = 2;    
