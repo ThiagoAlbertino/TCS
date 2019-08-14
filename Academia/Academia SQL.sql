@@ -1,37 +1,37 @@
 CREATE DATABASE IF NOT EXISTS academia;
 
-CREATE TABLE administrador(
-	ID_ADM INT PRIMARY KEY AUTO_INCREMENT,
-	nome_administrador VARCHAR(50) NOT NULL,
-	senha_administrador CHAR(32) NOT NULL
+CREATE TABLE usuario(
+	ID_USUARIO INT PRIMARY KEY AUTO_INCREMENT,
+    nome_usuario VARCHAR(50) NOT NULL,
+    data_nascimento DATETIME NOT NULL,
+    peso_usuario FLOAT NOT NULL,
+    altura_usuario FLOAT NOT NULL,
+    senha_usuario CHAR(32) NOT NULL,
+    privilegio INT NOT NULL
 );
 
-CREATE TABLE instrutor(
-	ID_INSTRUTOR INT PRIMARY KEY AUTO_INCREMENT,
-	nome_instrutor VARCHAR(50) NOT NULL,
-	funcao_instrutor VARCHAR(50) NOT NULL
-);
-
-CREATE TABLE aluno(
-	ID_ALUNO INT PRIMARY KEY AUTO_INCREMENT,
-    nome_aluno VARCHAR(50) NOT NULL,
-    idade_aluno INT NOT NULL,
-    rg_aluno CHAR(9) NOT NULL,
-    telefone_aluno INT NOT NULL,
-    endereco_aluno VARCHAR(100) NOT NULL
-);
-
-CREATE TABLE aparelho(
-	ID_APARELHO INT PRIMARY KEY AUTO_INCREMENT,
-    nome_aparelho VARCHAR(50) NOT NULL,
-    tipo_aparelho VARCHAR(50) NOT NULL,
-    marca_aparelho VARCHAR(50) NOT NULL,
-    disponibilidade_aparelho BOOLEAN NOT NULL
+CREATE TABLE exercicio(
+	ID_EXERCICIO INT PRIMARY KEY AUTO_INCREMENT,
+    nome_exercicio VARCHAR(50) NOT NULL,
+    categoria_exercicio VARCHAR(50) NOT NULL,
+    descricao_exercicio VARCHAR(100) NOT NULL
 );
 
 CREATE TABLE treino(
 	ID_TREINO INT PRIMARY KEY AUTO_INCREMENT,
-    nome_treino VARCHAR(50) NOT NULL,
-    tipo_treino VARCHAR(50) NOT NULL,
-	duracao_treino DATETIME NOT NULL
+    series_treino INT NOT NULL
 );
+
+CREATE TABLE categoria(
+	ID_CAREGORIA INT PRIMARY KEY AUTO_INCREMENT,
+    nome_categoria VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE dia_semana(
+	ID_DIA INT PRIMARY KEY AUTO_INCREMENT,
+    nome_dia VARCHAR(20) NOT NULL
+);
+
+ALTER TABLE treino ADD CONSTRAINT FK_EXERCICIO FOREIGN KEY (ID_EXERCICIO) REFERENCES exercicio (ID_EXERCICIO);
+ALTER TABLE treino ADD CONSTRAINT FK_USUARIO FOREIGN KEY (ID_USUARIO) REFERENCES usuario (ID_USUARIO);
+ALTER TABLE treino ADD CONSTRAINT FK_DIA FOREIGN KEY (ID_DIA) REFERENCES dia_semana (ID_DIA);
