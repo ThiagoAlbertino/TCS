@@ -7,13 +7,13 @@
 		<title>Formulario de exercício</title>
 	</head>
 	<body>
-		<form method="post" action="/academia/Categoria">
+		<form method="post" action="/academia/Usuario">
 			<div>
 				<label for="nome">Nome do usuário: </label>
 				<input type="text" name="nome" id="nome"/>
 			</div>
 			<div>
-				<label for="data">Data de nascimento do usuário: </label>
+				<label for="nascimento">Data de nascimento do usuário: </label>
 				<input type="date" name="nascimento" id="nascimento"/>
 			</div>
 			<div>

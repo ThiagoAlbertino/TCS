@@ -7,7 +7,7 @@
 		<title>Formulario de exercício</title>
 	</head>
 	<body>
-		<form method="post" action="/academia/Categoria">
+		<form method="post" action="/academia/Exercicio">
 			<div>
 				<label for="nome">Nome do exercício: </label>
 				<input type="text" name="nome" id="nome"/>

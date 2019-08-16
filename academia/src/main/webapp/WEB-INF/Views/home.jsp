@@ -22,7 +22,7 @@
 		     	<td><a href="/academia/Usuario/form">Adicionar usuário</a></td>
 		    </tr>
 		    <tr>
-		     	<td><a href="#">Link</a></td>
+		     	<td><a href="/academia/DataTreino/form">Adicionar data do treino</a></td>
 		    </tr>   
 		</table>
 	</body>

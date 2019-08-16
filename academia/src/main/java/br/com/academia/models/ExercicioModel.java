@@ -11,7 +11,7 @@ public class ExercicioModel {
 	private int id;
 	private String nome;
 	private int categoria;
-	private String descricao;
+	private String description;
 
 	public String getNome() {
 		return nome;
@@ -25,10 +25,10 @@ public class ExercicioModel {
 	public void setCategoria(int categoria) {
 		this.categoria = categoria;
 	}
-	public String getDescricao() {
-		return descricao;
+	public String getDescription() {
+		return description;
 	}
-	public void setDescricao(String descricao) {
-		this.descricao = descricao;
+	public void setDescription(String description) {
+		this.description = description;
 	}
 }

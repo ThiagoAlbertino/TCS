@@ -7,13 +7,13 @@
 		<title>Formulario de treino</title>
 	</head>
 	<body>
-		<form method="post" action="/academia/Treino">
+		<form method="post" action="/academia/DataTreino">
 			<div>
-				<label for="series">Número de séries do treino: </label>
-				<input type="number" name="series" id="series"/>
+				<label for="data">Data do treino: </label>
+				<input type="date" name="data" id="data"/>
 			</div>
 			<div>
-				<input type="submit">
+				<input type="submit" value="Enviar">
 			</div>
 		</form>
 		<a href="/academia/">Voltar para home</a>
