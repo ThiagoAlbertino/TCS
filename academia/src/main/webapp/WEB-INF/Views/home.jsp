@@ -19,7 +19,7 @@
 		     	<td><a href="/academia/Treino/form">Adicionar treino</a></td>
 		    </tr>
 		    <tr>
-		     	<td><a href="#">Link</a></td>
+		     	<td><a href="/academia/Usuario/form">Adicionar usuário</a></td>
 		    </tr>
 		    <tr>
 		     	<td><a href="#">Link</a></td>

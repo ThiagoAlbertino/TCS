@@ -9,7 +9,7 @@
 	<body>
 		<form method="post" action="/academia/Categoria">
 			<div>
-				<label for="nome">Número de séries do treino: </label>
+				<label for="series">Número de séries do treino: </label>
 				<input type="number" name="series" id="series"/>
 			</div>
 			<div>
