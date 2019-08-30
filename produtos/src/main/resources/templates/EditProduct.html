@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Atualizar produto</title>
+		<style type="text/css">
+		
+		</style>	
+		<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	</head>
+	<body>
+		<div class="row">
+			<div class="col-md-4">
+				<a href="index.html">Voltar para página principal</a>
+			</div>
+			<div class="col-md-4">
+				<form action="#" th:action="@{/save}" th:object="${product}" method="post">
+					<h1>Atualizar produto</h1>
+					<div class="form-group">
+						<label>ID produto:</label>
+						<input type="number" name="" th:field="*{id}" readonly="readonly" class="form-control" placeholder="Ex: Caneta">
+					</div>
+					<div class="form-group">
+						<label>Nome produto:</label>
+						<input type="text" th:field="*{name}" name="" class="form-control" placeholder="Ex: Caneta">
+					</div>
+					<div class="form-group">
+						<label>Marca do produto:</label>
+						<input type="text" th:field="*{brand}" name="" class="form-control" placeholder="Ex: Bic">
+					</div>
+					<div class="form-group">
+						<label>País de origem:</label>
+						<input type="text" th:field="*{madein}" name="" class="form-control" placeholder="Ex: Brasil">
+					</div>
+					<div class="form-group">
+						<label>Preço do produto:</label>
+						<input type="number" th:field="*{price}" name="" class="form-control" placeholder="R$ 02,00">
+					</div>
+					<input type="submit" name="" value="Salvar" class="btn btn-success">
+				</form>
+			</div>
+			<div class="col-md-4"></div>
+		</div>
+	</body>
+</html>

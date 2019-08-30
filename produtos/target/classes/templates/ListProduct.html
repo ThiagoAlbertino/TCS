@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org" >
+	<head>
+		<meta charset="utf-8">
+		<title>Lista de produtos</title>
+		<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	</head>
+	<body>
+		<div class="container">
+			<a href="index.html">Voltar para página principal</a>
+			<h1>Lista de Produtos</h1>
+			<a href="NewProduct">Criar novo produto</a>
+			<table class="table table-condensed">
+				<thead>
+					<tr>
+						<th>ID</th>
+						<th>Nome</th>
+						<th>Marca</th>
+						<th>País</th>
+						<th>Preço</th>
+						<th>Editar</th>
+						<th>Excluir</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="product: ${ListProducts}">
+						<td th:text="${product.id}">Produto ID</td>
+						<td th:text="${product.name}">Nome Produto</td>
+						<td th:text="${product.brand}">Marca Produto</td>
+						<td th:text="${product.madein}">País Produto</td>
+						<td th:text="${product.price}">Preço Produto</td>
+						<td><input th:href="@{'/edit/' + ${product.id}}" type="submit" name="" value="Editar" class="btn btn-warning"></td>
+						<td><input th:href="@{'/delete/' + ${product.id}}" type="submit" name="" value="Excluir" class="btn btn-danger"></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</body>
+</html>

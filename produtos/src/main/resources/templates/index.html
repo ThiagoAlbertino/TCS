@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org" >
+	<head>
+		<meta charset="utf-8">
+		<title>Lista de produtos</title>
+		<style type="text/css">
+			h1{
+				text-align: center;
+			}
+		</style>
+		<script>
+			function myFunction() {
+				confirm("Você excluiu o produto");
+			}
+			$(document).ready(function(){
+				$('[data-toggle="tooltip"]').tooltip();   
+			});
+		</script>
+		<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	</head>
+	<body>
+		<div class="container">
+			<h1>Lista de Produtos</h1>
+			<table class="table table-condensed">
+				<thead>
+					<tr>
+						<th>ID</th>
+						<th>Nome</th>
+						<th>Marca</th>
+						<th>País</th>
+						<th>Preço R$</th>
+						<th>Editar</th>
+						<th>Excluir</th>
+						<th><a href="/NewProduct" class="btn btn-success">Novo Produto</a></th>
+						<!--<th><input id="cad" type="submit" name="" value="Novo produto" class="btn btn-success"></th>-->
+					</tr>
+				</thead>
+				<tbody>
+					<tr th:each="product: ${listProducts}">
+						<td th:text="${product.id}">ID</td>
+						<td th:text="${product.name}">Nome</td>
+						<td th:text="${product.brand}">Marca</td>
+						<td th:text="${product.madein}">País</td>
+						<td th:text="${product.price}">Preço</td>
+						<td><a th:href="@{'/EditProduct/' + ${product.id}}" class="btn btn-warning">Editar</a></td>
+						<td><a th:href="@{'/delete/' + ${product.id}}" class="btn btn-danger" onclick="myFunction()" data-toggle="tooltip" title="Só clique se tiver certeza que quer excluir o produto!">Excluir</a></td>
+						<td></td>
+						<!--
+							<td><input th:href="@{'/edit/' + ${product.id}}" type="submit" name="" value="Editar" class="btn btn-warning"></td>
+							<td><input th:href="@{'/delete/' + ${product.id}}" type="submit" name="" value="Excluir" class="btn btn-danger"></td> 
+						-->						
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</body>
+</html>
